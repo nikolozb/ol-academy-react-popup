@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Popup from "./components/popup/Popup";
+
+import "./App.css";
 
 function App() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+    console.log("togglePopup");
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Show Popup</h1>
+      <button onClick={togglePopup} className="btn">
+        Open
+      </button>
+      {showPopup ? <Popup togglePopup={togglePopup} /> : null}
     </div>
   );
 }
