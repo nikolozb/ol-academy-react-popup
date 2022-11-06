@@ -6,12 +6,8 @@ const Popup = ({ togglePopup }) => {
   const popupRef = useRef();
 
   useEffect(() => {
-    const hidePopup = (event) => {
-      //   console.log("componentDidMount");
-      //   console.log("target:", event.target);
-      //   console.log(!popupRef.current.contains(event.target));
-      //   console.log(popupRef.current);
-      if (popupRef.current && !popupRef.current.contains(event.target)) {
+    const hidePopup = (e) => {
+      if (popupRef.current && !popupRef.current.contains(e.target)) {
         togglePopup();
       }
     };

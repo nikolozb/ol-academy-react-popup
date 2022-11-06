@@ -8,7 +8,6 @@ function App() {
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
-    console.log("togglePopup");
   };
 
   return (
