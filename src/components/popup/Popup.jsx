@@ -7,7 +7,7 @@ const Popup = ({ togglePopup }) => {
 
   useEffect(() => {
     const hidePopup = (e) => {
-      if (popupRef.current && !popupRef.current.contains(e.target)) {
+      if (!popupRef?.current?.contains(e.target)) {
         togglePopup();
       }
     };
